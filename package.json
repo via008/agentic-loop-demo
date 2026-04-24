@@ -1,0 +1,45 @@
+{
+  "name": "agentic-loop-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "reset": "npx rimraf ./**/node_modules",
+    "setup": "pnpm run reset && pnpm install",
+    "dev": "vite",
+    "dev:api": "node --env-file=.env.local server/index.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "biome check",
+    "prepare": "simple-git-hooks",
+    "check": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome check --files-ignore-unknown=true"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
+    "react": "~19.2.1",
+    "react-dom": "~19.2.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^20",
+    "@types/react": "~19.2.7",
+    "@types/react-dom": "~19.2.3",
+    "@vitejs/plugin-react": "6.0.1",
+    "lint-staged": "~13.1.0",
+    "prettier": "^3.4.2",
+    "rimraf": "~3.0.2",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "~5.7.3",
+    "vite": "8.0.10"
+  }
+}
