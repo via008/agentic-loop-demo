@@ -73,20 +73,12 @@ VITE_API_BASE_URL=http://localhost:3001
 
 ## 环境变量
 
-后端 API 主要使用以下环境变量：
+LLM 模型主要使用以下环境变量：
 
 ```bash
 ANTHROPIC_API_KEY=your_api_key
 ANTHROPIC_MODEL=your_model_name
 ANTHROPIC_BASE_URL=https://your-model-endpoint.example.com
-ANTHROPIC_CUSTOM_HEADERS=
-AGENT_LOOP_PORT=3001
-```
-
-前端可选环境变量：
-
-```bash
-VITE_API_BASE_URL=http://localhost:3001
 ```
 
 建议基于仓库中的 `.env.example` 复制出本地的 `.env.local` 再进行修改。
